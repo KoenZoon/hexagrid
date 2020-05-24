@@ -62,7 +62,7 @@
             this.btnX4Y3 = new System.Windows.Forms.Button();
             this.btnX4Y1 = new System.Windows.Forms.Button();
             this.btnX4Y2 = new System.Windows.Forms.Button();
-            this.btnx4Y8 = new System.Windows.Forms.Button();
+            this.btnX4Y8 = new System.Windows.Forms.Button();
             this.btnX5Y8 = new System.Windows.Forms.Button();
             this.btnX5Y7 = new System.Windows.Forms.Button();
             this.btnX5Y6 = new System.Windows.Forms.Button();
@@ -89,6 +89,9 @@
             this.btnX8Y6 = new System.Windows.Forms.Button();
             this.btnX8Y5 = new System.Windows.Forms.Button();
             this.btnX8Y4 = new System.Windows.Forms.Button();
+            this.btnV = new System.Windows.Forms.Button();
+            this.btnL = new System.Windows.Forms.Button();
+            this.btnR = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnX0Y0
@@ -363,13 +366,13 @@
             this.btnX4Y2.TabIndex = 32;
             this.btnX4Y2.UseVisualStyleBackColor = true;
             // 
-            // btnx4Y8
+            // btnX4Y8
             // 
-            this.btnx4Y8.Location = new System.Drawing.Point(626, 884);
-            this.btnx4Y8.Name = "btnx4Y8";
-            this.btnx4Y8.Size = new System.Drawing.Size(106, 103);
-            this.btnx4Y8.TabIndex = 40;
-            this.btnx4Y8.UseVisualStyleBackColor = true;
+            this.btnX4Y8.Location = new System.Drawing.Point(626, 884);
+            this.btnX4Y8.Name = "btnX4Y8";
+            this.btnX4Y8.Size = new System.Drawing.Size(106, 103);
+            this.btnX4Y8.TabIndex = 40;
+            this.btnX4Y8.UseVisualStyleBackColor = true;
             // 
             // btnX5Y8
             // 
@@ -579,11 +582,44 @@
             this.btnX8Y4.TabIndex = 62;
             this.btnX8Y4.UseVisualStyleBackColor = true;
             // 
+            // btnV
+            // 
+            this.btnV.Location = new System.Drawing.Point(1251, 852);
+            this.btnV.Name = "btnV";
+            this.btnV.Size = new System.Drawing.Size(75, 63);
+            this.btnV.TabIndex = 67;
+            this.btnV.Text = "V";
+            this.btnV.UseVisualStyleBackColor = true;
+            this.btnV.Click += new System.EventHandler(this.btnV_Click);
+            // 
+            // btnL
+            // 
+            this.btnL.Location = new System.Drawing.Point(1181, 921);
+            this.btnL.Name = "btnL";
+            this.btnL.Size = new System.Drawing.Size(75, 63);
+            this.btnL.TabIndex = 68;
+            this.btnL.Text = "L";
+            this.btnL.UseVisualStyleBackColor = true;
+            this.btnL.Click += new System.EventHandler(this.btnL_Click);
+            // 
+            // btnR
+            // 
+            this.btnR.Location = new System.Drawing.Point(1320, 921);
+            this.btnR.Name = "btnR";
+            this.btnR.Size = new System.Drawing.Size(74, 62);
+            this.btnR.TabIndex = 69;
+            this.btnR.Text = "R";
+            this.btnR.UseVisualStyleBackColor = true;
+            this.btnR.Click += new System.EventHandler(this.btnR_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1429, 1030);
+            this.Controls.Add(this.btnR);
+            this.Controls.Add(this.btnL);
+            this.Controls.Add(this.btnV);
             this.Controls.Add(this.btnX8Y8);
             this.Controls.Add(this.btnX8Y7);
             this.Controls.Add(this.btnX8Y6);
@@ -610,7 +646,7 @@
             this.Controls.Add(this.btnX5Y4);
             this.Controls.Add(this.btnX5Y2);
             this.Controls.Add(this.btnX5Y3);
-            this.Controls.Add(this.btnx4Y8);
+            this.Controls.Add(this.btnX4Y8);
             this.Controls.Add(this.btnX4Y7);
             this.Controls.Add(this.btnX4Y6);
             this.Controls.Add(this.btnX4Y5);
@@ -688,7 +724,7 @@
         private System.Windows.Forms.Button btnX4Y3;
         private System.Windows.Forms.Button btnX4Y1;
         private System.Windows.Forms.Button btnX4Y2;
-        private System.Windows.Forms.Button btnx4Y8;
+        private System.Windows.Forms.Button btnX4Y8;
         private System.Windows.Forms.Button btnX5Y8;
         private System.Windows.Forms.Button btnX5Y7;
         private System.Windows.Forms.Button btnX5Y6;
@@ -715,6 +751,9 @@
         private System.Windows.Forms.Button btnX8Y6;
         private System.Windows.Forms.Button btnX8Y5;
         private System.Windows.Forms.Button btnX8Y4;
+        private System.Windows.Forms.Button btnV;
+        private System.Windows.Forms.Button btnL;
+        private System.Windows.Forms.Button btnR;
     }
 }
 
