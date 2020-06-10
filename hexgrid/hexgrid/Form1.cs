@@ -18,10 +18,10 @@ namespace hexgrid
     {
         Boolean game = true;
         int plr1dir = 1;
-        int plr1pos = 44;
+        int plr1pos = 43;
 
-        int plr2dir = 1;
-        int plr2pos = 44;
+        int plr2dir = 4;
+        int plr2pos = 45;
 
         string turn = "blue";
 
@@ -127,130 +127,986 @@ namespace hexgrid
                 //einde beurt rood
                 turn = "blue";
             }
-            //positie markeren blauw
-            if( plr1pos == 00) { btnX0Y0.BackColor = Color.Blue; }
-            if (plr1pos == 01) { btnX0Y1.BackColor = Color.Blue; }
-            if (plr1pos == 03) { btnX0Y3.BackColor = Color.Blue; }
-            if (plr1pos == 04) { btnX0Y4.BackColor = Color.Blue; }
-            if (plr1pos == 10) { btnX1Y0.BackColor = Color.Blue; }
-            if (plr1pos == 11) { btnX1Y1.BackColor = Color.Blue; }
-            if (plr1pos == 12) { btnX1Y2.BackColor = Color.Blue; }
-            if (plr1pos == 13) { btnX1Y3.BackColor = Color.Blue; }
-            if (plr1pos == 14) { btnX1Y4.BackColor = Color.Blue; }
-            if (plr1pos == 15) { btnX1Y5.BackColor = Color.Blue; }
-            if (plr1pos == 20) { btnX2Y0.BackColor = Color.Blue; }
-            if (plr1pos == 21) { btnX2Y1.BackColor = Color.Blue; }
-            if (plr1pos == 22) { btnX2Y2.BackColor = Color.Blue; }
-            if (plr1pos == 23) { btnX2Y3.BackColor = Color.Blue; }
-            if (plr1pos == 24) { btnX2Y4.BackColor = Color.Blue; }
-            if (plr1pos == 25) { btnX2Y5.BackColor = Color.Blue; }
-            if (plr1pos == 26) { btnX2Y6.BackColor = Color.Blue; }
-            if (plr1pos == 30) { btnX3Y0.BackColor = Color.Blue; }
-            if (plr1pos == 31) { btnX3Y1.BackColor = Color.Blue; }
-            if (plr1pos == 32) { btnX3Y2.BackColor = Color.Blue; }
-            if (plr1pos == 33) { btnX3Y3.BackColor = Color.Blue; }
-            if (plr1pos == 34) { btnX3Y4.BackColor = Color.Blue; }
-            if (plr1pos == 35) { btnX3Y5.BackColor = Color.Blue; }
-            if (plr1pos == 36) { btnX3Y6.BackColor = Color.Blue; }
-            if (plr1pos == 37) { btnX3Y7.BackColor = Color.Blue; }
-            if (plr1pos == 40) { btnX4Y0.BackColor = Color.Blue; }
-            if (plr1pos == 41) { btnX4Y1.BackColor = Color.Blue; }
-            if (plr1pos == 42) { btnX4Y2.BackColor = Color.Blue; }
-            if (plr1pos == 43) { btnX4Y3.BackColor = Color.Blue; }
-            if (plr1pos == 44) { btnX4Y4.BackColor = Color.Blue; }
-            if (plr1pos == 45) { btnX4Y5.BackColor = Color.Blue; }
-            if (plr1pos == 46) { btnX4Y6.BackColor = Color.Blue; }
-            if (plr1pos == 47) { btnX4Y7.BackColor = Color.Blue; }
-            if (plr1pos == 48) { btnX4Y8.BackColor = Color.Blue; }
-            if (plr1pos == 51) { btnX5Y1.BackColor = Color.Blue; }
-            if (plr1pos == 52) { btnX5Y2.BackColor = Color.Blue; }
-            if (plr1pos == 53) { btnX5Y3.BackColor = Color.Blue; }
-            if (plr1pos == 54) { btnX5Y4.BackColor = Color.Blue; }
-            if (plr1pos == 55) { btnX5Y5.BackColor = Color.Blue; }
-            if (plr1pos == 56) { btnX5Y6.BackColor = Color.Blue; }
-            if (plr1pos == 57) { btnX5Y7.BackColor = Color.Blue; }
-            if (plr1pos == 58) { btnX5Y8.BackColor = Color.Blue; }
-            if (plr1pos == 62) { btnX6Y2.BackColor = Color.Blue; }
-            if (plr1pos == 63) { btnX6Y3.BackColor = Color.Blue; }
-            if (plr1pos == 64) { btnX6Y4.BackColor = Color.Blue; }
-            if (plr1pos == 65) { btnX6Y5.BackColor = Color.Blue; }
-            if (plr1pos == 66) { btnX6Y6.BackColor = Color.Blue; }
-            if (plr1pos == 67) { btnX6Y7.BackColor = Color.Blue; }
-            if (plr1pos == 68) { btnX6Y8.BackColor = Color.Blue; }
-            if (plr1pos == 73) { btnX7Y3.BackColor = Color.Blue; }
-            if (plr1pos == 74) { btnX7Y4.BackColor = Color.Blue; }
-            if (plr1pos == 75) { btnX7Y5.BackColor = Color.Blue; }
-            if (plr1pos == 76) { btnX7Y6.BackColor = Color.Blue; }
-            if (plr1pos == 77) { btnX7Y7.BackColor = Color.Blue; }
-            if (plr1pos == 78) { btnX7Y8.BackColor = Color.Blue; }
-            if (plr1pos == 84) { btnX8Y4.BackColor = Color.Blue; }
-            if (plr1pos == 85) { btnX8Y5.BackColor = Color.Blue; }
-            if (plr1pos == 86) { btnX8Y6.BackColor = Color.Blue; }
-            if (plr1pos == 87) { btnX8Y7.BackColor = Color.Blue; }
-            if (plr1pos == 88) { btnX8Y8.BackColor = Color.Blue; }
+            //positie markeren blauw en richting noteren
+            if (plr1pos == 00) { btnX0Y0.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX8Y4.Text = "1"; }
+                if (plr1dir == 2) { btnX8Y4.Text = "2"; }
+                if (plr1dir == 3) { btnX8Y4.Text = "3"; }
+                if (plr1dir == 4) { btnX8Y4.Text = "4"; }
+                if (plr1dir == 5) { btnX8Y4.Text = "5"; }
+                if (plr1dir == 6) { btnX8Y4.Text = "6"; }
+            }
+            if (plr1pos == 01) { btnX0Y1.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX0Y1.Text = "1"; }
+                if (plr1dir == 2) { btnX0Y1.Text = "2"; }
+                if (plr1dir == 3) { btnX0Y1.Text = "3"; }
+                if (plr1dir == 4) { btnX0Y1.Text = "4"; }
+                if (plr1dir == 5) { btnX0Y1.Text = "5"; }
+                if (plr1dir == 6) { btnX0Y1.Text = "6"; }
+            }
+            if (plr1pos == 02) { btnX0Y2.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX0Y2.Text = "1"; }
+                if (plr1dir == 2) { btnX0Y2.Text = "2"; }
+                if (plr1dir == 3) { btnX0Y2.Text = "3"; }
+                if (plr1dir == 4) { btnX0Y2.Text = "4"; }
+                if (plr1dir == 5) { btnX0Y2.Text = "5"; }
+                if (plr1dir == 6) { btnX0Y2.Text = "6"; }
+            }
+            if (plr1pos == 03) { btnX0Y3.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX0Y3.Text = "1"; }
+                if (plr1dir == 2) { btnX0Y3.Text = "2"; }
+                if (plr1dir == 3) { btnX0Y3.Text = "3"; }
+                if (plr1dir == 4) { btnX0Y3.Text = "4"; }
+                if (plr1dir == 5) { btnX0Y3.Text = "5"; }
+                if (plr1dir == 6) { btnX0Y3.Text = "6"; }
+            }
+            if (plr1pos == 04) { btnX0Y4.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX0Y4.Text = "1"; }
+                if (plr1dir == 2) { btnX0Y4.Text = "2"; }
+                if (plr1dir == 3) { btnX0Y4.Text = "3"; }
+                if (plr1dir == 4) { btnX0Y4.Text = "4"; }
+                if (plr1dir == 5) { btnX0Y4.Text = "5"; }
+                if (plr1dir == 6) { btnX0Y4.Text = "6"; }
+            }
+            if (plr1pos == 10) { btnX1Y0.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX1Y0.Text = "1"; }
+                if (plr1dir == 2) { btnX1Y0.Text = "2"; }
+                if (plr1dir == 3) { btnX1Y0.Text = "3"; }
+                if (plr1dir == 4) { btnX1Y0.Text = "4"; }
+                if (plr1dir == 5) { btnX1Y0.Text = "5"; }
+                if (plr1dir == 6) { btnX1Y0.Text = "6"; }
+            }
+            if (plr1pos == 11) { btnX1Y1.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX1Y1.Text = "1"; }
+                if (plr1dir == 2) { btnX1Y1.Text = "2"; }
+                if (plr1dir == 3) { btnX1Y1.Text = "3"; }
+                if (plr1dir == 4) { btnX1Y1.Text = "4"; }
+                if (plr1dir == 5) { btnX1Y1.Text = "5"; }
+                if (plr1dir == 6) { btnX1Y1.Text = "6"; }
+            }
+            if (plr1pos == 12) { btnX1Y2.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX1Y2.Text = "1"; }
+                if (plr1dir == 2) { btnX1Y2.Text = "2"; }
+                if (plr1dir == 3) { btnX1Y2.Text = "3"; }
+                if (plr1dir == 4) { btnX1Y2.Text = "4"; }
+                if (plr1dir == 5) { btnX1Y2.Text = "5"; }
+                if (plr1dir == 6) { btnX1Y2.Text = "6"; }
+            }
+            if (plr1pos == 13) { btnX1Y3.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX1Y3.Text = "1"; }
+                if (plr1dir == 2) { btnX1Y3.Text = "2"; }
+                if (plr1dir == 3) { btnX1Y3.Text = "3"; }
+                if (plr1dir == 4) { btnX1Y3.Text = "4"; }
+                if (plr1dir == 5) { btnX1Y3.Text = "5"; }
+                if (plr1dir == 6) { btnX1Y3.Text = "6"; }
+            }
+            if (plr1pos == 14) { btnX1Y4.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX1Y4.Text = "1"; }
+                if (plr1dir == 2) { btnX1Y4.Text = "2"; }
+                if (plr1dir == 3) { btnX1Y4.Text = "3"; }
+                if (plr1dir == 4) { btnX1Y4.Text = "4"; }
+                if (plr1dir == 5) { btnX1Y4.Text = "5"; }
+                if (plr1dir == 6) { btnX1Y4.Text = "6"; }
+            }
+            if (plr1pos == 15) { btnX1Y5.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX1Y5.Text = "1"; }
+                if (plr1dir == 2) { btnX1Y5.Text = "2"; }
+                if (plr1dir == 3) { btnX1Y5.Text = "3"; }
+                if (plr1dir == 4) { btnX1Y5.Text = "4"; }
+                if (plr1dir == 5) { btnX1Y5.Text = "5"; }
+                if (plr1dir == 6) { btnX1Y5.Text = "6"; }
+            }
+            if (plr1pos == 20) { btnX2Y0.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX2Y0.Text = "1"; }
+                if (plr1dir == 2) { btnX2Y0.Text = "2"; }
+                if (plr1dir == 3) { btnX2Y0.Text = "3"; }
+                if (plr1dir == 4) { btnX2Y0.Text = "4"; }
+                if (plr1dir == 5) { btnX2Y0.Text = "5"; }
+                if (plr1dir == 6) { btnX2Y0.Text = "6"; }
+            }
+            if (plr1pos == 21) { btnX2Y1.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX2Y1.Text = "1"; }
+                if (plr1dir == 2) { btnX2Y1.Text = "2"; }
+                if (plr1dir == 3) { btnX2Y1.Text = "3"; }
+                if (plr1dir == 4) { btnX2Y1.Text = "4"; }
+                if (plr1dir == 5) { btnX2Y1.Text = "5"; }
+                if (plr1dir == 6) { btnX2Y1.Text = "6"; }
+            }
+            if (plr1pos == 22) { btnX2Y2.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX2Y2.Text = "1"; }
+                if (plr1dir == 2) { btnX2Y2.Text = "2"; }
+                if (plr1dir == 3) { btnX2Y2.Text = "3"; }
+                if (plr1dir == 4) { btnX2Y2.Text = "4"; }
+                if (plr1dir == 5) { btnX2Y2.Text = "5"; }
+                if (plr1dir == 6) { btnX2Y2.Text = "6"; }
+            }
+            if (plr1pos == 23) { btnX2Y3.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX2Y3.Text = "1"; }
+                if (plr1dir == 2) { btnX2Y3.Text = "2"; }
+                if (plr1dir == 3) { btnX2Y3.Text = "3"; }
+                if (plr1dir == 4) { btnX2Y3.Text = "4"; }
+                if (plr1dir == 5) { btnX2Y3.Text = "5"; }
+                if (plr1dir == 6) { btnX2Y3.Text = "6"; }
+            }
+            if (plr1pos == 24) { btnX2Y4.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX2Y4.Text = "1"; }
+                if (plr1dir == 2) { btnX2Y4.Text = "2"; }
+                if (plr1dir == 3) { btnX2Y4.Text = "3"; }
+                if (plr1dir == 4) { btnX2Y4.Text = "4"; }
+                if (plr1dir == 5) { btnX2Y4.Text = "5"; }
+                if (plr1dir == 6) { btnX2Y4.Text = "6"; }
+            }
+            if (plr1pos == 25) { btnX2Y5.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX2Y5.Text = "1"; }
+                if (plr1dir == 2) { btnX2Y5.Text = "2"; }
+                if (plr1dir == 3) { btnX2Y5.Text = "3"; }
+                if (plr1dir == 4) { btnX2Y5.Text = "4"; }
+                if (plr1dir == 5) { btnX2Y5.Text = "5"; }
+                if (plr1dir == 6) { btnX2Y5.Text = "6"; }
+            }
+            if (plr1pos == 26) { btnX2Y6.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX2Y6.Text = "1"; }
+                if (plr1dir == 2) { btnX2Y6.Text = "2"; }
+                if (plr1dir == 3) { btnX2Y6.Text = "3"; }
+                if (plr1dir == 4) { btnX2Y6.Text = "4"; }
+                if (plr1dir == 5) { btnX2Y6.Text = "5"; }
+                if (plr1dir == 6) { btnX2Y6.Text = "6"; }
+            }
+            if (plr1pos == 30) { btnX3Y0.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX3Y0.Text = "1"; }
+                if (plr1dir == 2) { btnX3Y0.Text = "2"; }
+                if (plr1dir == 3) { btnX3Y0.Text = "3"; }
+                if (plr1dir == 4) { btnX3Y0.Text = "4"; }
+                if (plr1dir == 5) { btnX3Y0.Text = "5"; }
+                if (plr1dir == 6) { btnX3Y0.Text = "6"; }
+            }
+            if (plr1pos == 31) { btnX3Y1.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX3Y1.Text = "1"; }
+                if (plr1dir == 2) { btnX3Y1.Text = "2"; }
+                if (plr1dir == 3) { btnX3Y1.Text = "3"; }
+                if (plr1dir == 4) { btnX3Y1.Text = "4"; }
+                if (plr1dir == 5) { btnX3Y1.Text = "5"; }
+                if (plr1dir == 6) { btnX3Y1.Text = "6"; }
+            }
+            if (plr1pos == 32) { btnX3Y2.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX3Y2.Text = "1"; }
+                if (plr1dir == 2) { btnX3Y2.Text = "2"; }
+                if (plr1dir == 3) { btnX3Y2.Text = "3"; }
+                if (plr1dir == 4) { btnX3Y2.Text = "4"; }
+                if (plr1dir == 5) { btnX3Y2.Text = "5"; }
+                if (plr1dir == 6) { btnX3Y2.Text = "6"; }
+            }
+            if (plr1pos == 33) { btnX3Y3.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX3Y3.Text = "1"; }
+                if (plr1dir == 2) { btnX3Y3.Text = "2"; }
+                if (plr1dir == 3) { btnX3Y3.Text = "3"; }
+                if (plr1dir == 4) { btnX3Y3.Text = "4"; }
+                if (plr1dir == 5) { btnX3Y3.Text = "5"; }
+                if (plr1dir == 6) { btnX3Y3.Text = "6"; }
+            }
+            if (plr1pos == 34) { btnX3Y4.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX3Y4.Text = "1"; }
+                if (plr1dir == 2) { btnX3Y4.Text = "2"; }
+                if (plr1dir == 3) { btnX3Y4.Text = "3"; }
+                if (plr1dir == 4) { btnX3Y4.Text = "4"; }
+                if (plr1dir == 5) { btnX3Y4.Text = "5"; }
+                if (plr1dir == 6) { btnX3Y4.Text = "6"; }
+            }
+            if (plr1pos == 35) { btnX3Y5.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX3Y5.Text = "1"; }
+                if (plr1dir == 2) { btnX3Y5.Text = "2"; }
+                if (plr1dir == 3) { btnX3Y5.Text = "3"; }
+                if (plr1dir == 4) { btnX3Y5.Text = "4"; }
+                if (plr1dir == 5) { btnX3Y5.Text = "5"; }
+                if (plr1dir == 6) { btnX3Y5.Text = "6"; }
+            }
+            if (plr1pos == 36) { btnX3Y6.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX3Y6.Text = "1"; }
+                if (plr1dir == 2) { btnX3Y6.Text = "2"; }
+                if (plr1dir == 3) { btnX3Y6.Text = "3"; }
+                if (plr1dir == 4) { btnX3Y6.Text = "4"; }
+                if (plr1dir == 5) { btnX3Y6.Text = "5"; }
+                if (plr1dir == 6) { btnX3Y6.Text = "6"; }
+            }
+            if (plr1pos == 37) { btnX3Y7.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX3Y7.Text = "1"; }
+                if (plr1dir == 2) { btnX3Y7.Text = "2"; }
+                if (plr1dir == 3) { btnX3Y7.Text = "3"; }
+                if (plr1dir == 4) { btnX3Y7.Text = "4"; }
+                if (plr1dir == 5) { btnX3Y7.Text = "5"; }
+                if (plr1dir == 6) { btnX3Y7.Text = "6"; }
+            }
+            if (plr1pos == 40) { btnX4Y0.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX4Y0.Text = "1"; }
+                if (plr1dir == 2) { btnX4Y0.Text = "2"; }
+                if (plr1dir == 3) { btnX4Y0.Text = "3"; }
+                if (plr1dir == 4) { btnX4Y0.Text = "4"; }
+                if (plr1dir == 5) { btnX4Y0.Text = "5"; }
+                if (plr1dir == 6) { btnX4Y0.Text = "6"; }
+            }
+            if (plr1pos == 41) { btnX4Y1.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX4Y1.Text = "1"; }
+                if (plr1dir == 2) { btnX4Y1.Text = "2"; }
+                if (plr1dir == 3) { btnX4Y1.Text = "3"; }
+                if (plr1dir == 4) { btnX4Y1.Text = "4"; }
+                if (plr1dir == 5) { btnX4Y1.Text = "5"; }
+                if (plr1dir == 6) { btnX4Y1.Text = "6"; }
+            }
+            if (plr1pos == 42) { btnX4Y2.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX4Y2.Text = "1"; }
+                if (plr1dir == 2) { btnX4Y2.Text = "2"; }
+                if (plr1dir == 3) { btnX4Y2.Text = "3"; }
+                if (plr1dir == 4) { btnX4Y2.Text = "4"; }
+                if (plr1dir == 5) { btnX4Y2.Text = "5"; }
+                if (plr1dir == 6) { btnX4Y2.Text = "6"; }
+            }
+            if (plr1pos == 43) { btnX4Y3.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX4Y3.Text = "1"; }
+                if (plr1dir == 2) { btnX4Y3.Text = "2"; }
+                if (plr1dir == 3) { btnX4Y3.Text = "3"; }
+                if (plr1dir == 4) { btnX4Y3.Text = "4"; }
+                if (plr1dir == 5) { btnX4Y3.Text = "5"; }
+                if (plr1dir == 6) { btnX4Y3.Text = "6"; }
+            }
+            if (plr1pos == 44) { btnX4Y4.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX4Y4.Text = "1"; }
+                if (plr1dir == 2) { btnX4Y4.Text = "2"; }
+                if (plr1dir == 3) { btnX4Y4.Text = "3"; }
+                if (plr1dir == 4) { btnX4Y4.Text = "4"; }
+                if (plr1dir == 5) { btnX4Y4.Text = "5"; }
+                if (plr1dir == 6) { btnX4Y4.Text = "6"; }
+            }
+            if (plr1pos == 45) { btnX4Y5.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX4Y5.Text = "1"; }
+                if (plr1dir == 2) { btnX4Y5.Text = "2"; }
+                if (plr1dir == 3) { btnX4Y5.Text = "3"; }
+                if (plr1dir == 4) { btnX4Y5.Text = "4"; }
+                if (plr1dir == 5) { btnX4Y5.Text = "5"; }
+                if (plr1dir == 6) { btnX4Y5.Text = "6"; }
+            }
+            if (plr1pos == 46) { btnX4Y6.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX4Y6.Text = "1"; }
+                if (plr1dir == 2) { btnX4Y6.Text = "2"; }
+                if (plr1dir == 3) { btnX4Y6.Text = "3"; }
+                if (plr1dir == 4) { btnX4Y6.Text = "4"; }
+                if (plr1dir == 5) { btnX4Y6.Text = "5"; }
+                if (plr1dir == 6) { btnX4Y6.Text = "6"; }
+            }
+            if (plr1pos == 47) { btnX4Y7.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX4Y7.Text = "1"; }
+                if (plr1dir == 2) { btnX4Y7.Text = "2"; }
+                if (plr1dir == 3) { btnX4Y7.Text = "3"; }
+                if (plr1dir == 4) { btnX4Y7.Text = "4"; }
+                if (plr1dir == 5) { btnX4Y7.Text = "5"; }
+                if (plr1dir == 6) { btnX4Y7.Text = "6"; }
+            }
+            if (plr1pos == 48) { btnX4Y8.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX4Y8.Text = "1"; }
+                if (plr1dir == 2) { btnX4Y8.Text = "2"; }
+                if (plr1dir == 3) { btnX4Y8.Text = "3"; }
+                if (plr1dir == 4) { btnX4Y8.Text = "4"; }
+                if (plr1dir == 5) { btnX4Y8.Text = "5"; }
+                if (plr1dir == 6) { btnX4Y8.Text = "6"; }
+            }
+            if (plr1pos == 51) { btnX5Y1.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX5Y1.Text = "1"; }
+                if (plr1dir == 2) { btnX5Y1.Text = "2"; }
+                if (plr1dir == 3) { btnX5Y1.Text = "3"; }
+                if (plr1dir == 4) { btnX5Y1.Text = "4"; }
+                if (plr1dir == 5) { btnX5Y1.Text = "5"; }
+                if (plr1dir == 6) { btnX5Y1.Text = "6"; }
+            }
+            if (plr1pos == 52) { btnX5Y2.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX5Y2.Text = "1"; }
+                if (plr1dir == 2) { btnX5Y2.Text = "2"; }
+                if (plr1dir == 3) { btnX5Y2.Text = "3"; }
+                if (plr1dir == 4) { btnX5Y2.Text = "4"; }
+                if (plr1dir == 5) { btnX5Y2.Text = "5"; }
+                if (plr1dir == 6) { btnX5Y2.Text = "6"; }
+            }
+            if (plr1pos == 53) { btnX5Y3.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX5Y3.Text = "1"; }
+                if (plr1dir == 2) { btnX5Y3.Text = "2"; }
+                if (plr1dir == 3) { btnX5Y3.Text = "3"; }
+                if (plr1dir == 4) { btnX5Y3.Text = "4"; }
+                if (plr1dir == 5) { btnX5Y3.Text = "5"; }
+                if (plr1dir == 6) { btnX5Y3.Text = "6"; }
+            }
+            if (plr1pos == 54) { btnX5Y4.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX5Y4.Text = "1"; }
+                if (plr1dir == 2) { btnX5Y4.Text = "2"; }
+                if (plr1dir == 3) { btnX5Y4.Text = "3"; }
+                if (plr1dir == 4) { btnX5Y4.Text = "4"; }
+                if (plr1dir == 5) { btnX5Y4.Text = "5"; }
+                if (plr1dir == 6) { btnX5Y4.Text = "6"; }
+            }
+            if (plr1pos == 55) { btnX5Y5.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX5Y5.Text = "1"; }
+                if (plr1dir == 2) { btnX5Y5.Text = "2"; }
+                if (plr1dir == 3) { btnX5Y5.Text = "3"; }
+                if (plr1dir == 4) { btnX5Y5.Text = "4"; }
+                if (plr1dir == 5) { btnX5Y5.Text = "5"; }
+                if (plr1dir == 6) { btnX5Y5.Text = "6"; }
+            }
+            if (plr1pos == 56) { btnX5Y6.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX5Y6.Text = "1"; }
+                if (plr1dir == 2) { btnX5Y6.Text = "2"; }
+                if (plr1dir == 3) { btnX5Y6.Text = "3"; }
+                if (plr1dir == 4) { btnX5Y6.Text = "4"; }
+                if (plr1dir == 5) { btnX5Y6.Text = "5"; }
+                if (plr1dir == 6) { btnX5Y6.Text = "6"; }
+            }
+            if (plr1pos == 57) { btnX5Y7.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX5Y7.Text = "1"; }
+                if (plr1dir == 2) { btnX5Y7.Text = "2"; }
+                if (plr1dir == 3) { btnX5Y7.Text = "3"; }
+                if (plr1dir == 4) { btnX5Y7.Text = "4"; }
+                if (plr1dir == 5) { btnX5Y7.Text = "5"; }
+                if (plr1dir == 6) { btnX5Y7.Text = "6"; }
+            }
+            if (plr1pos == 58) { btnX5Y8.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX5Y8.Text = "1"; }
+                if (plr1dir == 2) { btnX5Y8.Text = "2"; }
+                if (plr1dir == 3) { btnX5Y8.Text = "3"; }
+                if (plr1dir == 4) { btnX5Y8.Text = "4"; }
+                if (plr1dir == 5) { btnX5Y8.Text = "5"; }
+                if (plr1dir == 6) { btnX5Y8.Text = "6"; }
+            }
+            if (plr1pos == 62) { btnX6Y2.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX6Y2.Text = "1"; }
+                if (plr1dir == 2) { btnX6Y2.Text = "2"; }
+                if (plr1dir == 3) { btnX6Y2.Text = "3"; }
+                if (plr1dir == 4) { btnX6Y2.Text = "4"; }
+                if (plr1dir == 5) { btnX6Y2.Text = "5"; }
+                if (plr1dir == 6) { btnX6Y2.Text = "6"; }
+            }
+            if (plr1pos == 63) { btnX6Y3.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX6Y3.Text = "1"; }
+                if (plr1dir == 2) { btnX6Y3.Text = "2"; }
+                if (plr1dir == 3) { btnX6Y3.Text = "3"; }
+                if (plr1dir == 4) { btnX6Y3.Text = "4"; }
+                if (plr1dir == 5) { btnX6Y3.Text = "5"; }
+                if (plr1dir == 6) { btnX6Y3.Text = "6"; }
+            }
+            if (plr1pos == 64) { btnX6Y4.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX6Y4.Text = "1"; }
+                if (plr1dir == 2) { btnX6Y4.Text = "2"; }
+                if (plr1dir == 3) { btnX6Y4.Text = "3"; }
+                if (plr1dir == 4) { btnX6Y4.Text = "4"; }
+                if (plr1dir == 5) { btnX6Y4.Text = "5"; }
+                if (plr1dir == 6) { btnX6Y4.Text = "6"; }
+            }
+            if (plr1pos == 65) { btnX6Y5.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX6Y5.Text = "1"; }
+                if (plr1dir == 2) { btnX6Y5.Text = "2"; }
+                if (plr1dir == 3) { btnX6Y5.Text = "3"; }
+                if (plr1dir == 4) { btnX6Y5.Text = "4"; }
+                if (plr1dir == 5) { btnX6Y5.Text = "5"; }
+                if (plr1dir == 6) { btnX6Y5.Text = "6"; }
+            }
+            if (plr1pos == 66) { btnX6Y6.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX6Y6.Text = "1"; }
+                if (plr1dir == 2) { btnX6Y6.Text = "2"; }
+                if (plr1dir == 3) { btnX6Y6.Text = "3"; }
+                if (plr1dir == 4) { btnX6Y6.Text = "4"; }
+                if (plr1dir == 5) { btnX6Y6.Text = "5"; }
+                if (plr1dir == 6) { btnX6Y6.Text = "6"; }
+            }
+            if (plr1pos == 67) { btnX6Y7.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX6Y7.Text = "1"; }
+                if (plr1dir == 2) { btnX6Y7.Text = "2"; }
+                if (plr1dir == 3) { btnX6Y7.Text = "3"; }
+                if (plr1dir == 4) { btnX6Y7.Text = "4"; }
+                if (plr1dir == 5) { btnX6Y7.Text = "5"; }
+                if (plr1dir == 6) { btnX6Y7.Text = "6"; }
+            }
+            if (plr1pos == 68) { btnX6Y8.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX6Y8.Text = "1"; }
+                if (plr1dir == 2) { btnX6Y8.Text = "2"; }
+                if (plr1dir == 3) { btnX6Y8.Text = "3"; }
+                if (plr1dir == 4) { btnX6Y8.Text = "4"; }
+                if (plr1dir == 5) { btnX6Y8.Text = "5"; }
+                if (plr1dir == 6) { btnX6Y8.Text = "6"; }
+            }
+            if (plr1pos == 73) { btnX7Y3.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX7Y3.Text = "1"; }
+                if (plr1dir == 2) { btnX7Y3.Text = "2"; }
+                if (plr1dir == 3) { btnX7Y3.Text = "3"; }
+                if (plr1dir == 4) { btnX7Y3.Text = "4"; }
+                if (plr1dir == 5) { btnX7Y3.Text = "5"; }
+                if (plr1dir == 6) { btnX7Y3.Text = "6"; }
+            }
+            if (plr1pos == 74) { btnX7Y4.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX7Y4.Text = "1"; }
+                if (plr1dir == 2) { btnX7Y4.Text = "2"; }
+                if (plr1dir == 3) { btnX7Y4.Text = "3"; }
+                if (plr1dir == 4) { btnX7Y4.Text = "4"; }
+                if (plr1dir == 5) { btnX7Y4.Text = "5"; }
+                if (plr1dir == 6) { btnX7Y4.Text = "6"; }
+            }
+            if (plr1pos == 75) { btnX7Y5.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX7Y5.Text = "1"; }
+                if (plr1dir == 2) { btnX7Y5.Text = "2"; }
+                if (plr1dir == 3) { btnX7Y5.Text = "3"; }
+                if (plr1dir == 4) { btnX7Y5.Text = "4"; }
+                if (plr1dir == 5) { btnX7Y5.Text = "5"; }
+                if (plr1dir == 6) { btnX7Y5.Text = "6"; }
+            }
+            if (plr1pos == 76) { btnX7Y6.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX7Y6.Text = "1"; }
+                if (plr1dir == 2) { btnX7Y6.Text = "2"; }
+                if (plr1dir == 3) { btnX7Y6.Text = "3"; }
+                if (plr1dir == 4) { btnX7Y6.Text = "4"; }
+                if (plr1dir == 5) { btnX7Y6.Text = "5"; }
+                if (plr1dir == 6) { btnX7Y6.Text = "6"; }
+            }
+            if (plr1pos == 77) { btnX7Y7.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX7Y7.Text = "1"; }
+                if (plr1dir == 2) { btnX7Y7.Text = "2"; }
+                if (plr1dir == 3) { btnX7Y7.Text = "3"; }
+                if (plr1dir == 4) { btnX7Y7.Text = "4"; }
+                if (plr1dir == 5) { btnX7Y7.Text = "5"; }
+                if (plr1dir == 6) { btnX7Y7.Text = "6"; }
+            }
+            if (plr1pos == 78) { btnX7Y8.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX7Y8.Text = "1"; }
+                if (plr1dir == 2) { btnX7Y8.Text = "2"; }
+                if (plr1dir == 3) { btnX7Y8.Text = "3"; }
+                if (plr1dir == 4) { btnX7Y8.Text = "4"; }
+                if (plr1dir == 5) { btnX7Y8.Text = "5"; }
+                if (plr1dir == 6) { btnX7Y8.Text = "6"; }
+            }
+            if (plr1pos == 84) { btnX8Y4.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX8Y4.Text = "1"; }
+                if (plr1dir == 2) { btnX8Y4.Text = "2"; }
+                if (plr1dir == 3) { btnX8Y4.Text = "3"; }
+                if (plr1dir == 4) { btnX8Y4.Text = "4"; }
+                if (plr1dir == 5) { btnX8Y4.Text = "5"; }
+                if (plr1dir == 6) { btnX8Y4.Text = "6"; }
+            }
+            if (plr1pos == 85) { btnX8Y5.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX8Y5.Text = "1"; }
+                if (plr1dir == 2) { btnX8Y5.Text = "2"; }
+                if (plr1dir == 3) { btnX8Y5.Text = "3"; }
+                if (plr1dir == 4) { btnX8Y5.Text = "4"; }
+                if (plr1dir == 5) { btnX8Y5.Text = "5"; }
+                if (plr1dir == 6) { btnX8Y5.Text = "6"; }
+            }
+            if (plr1pos == 86) { btnX8Y6.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX8Y6.Text = "1"; }
+                if (plr1dir == 2) { btnX8Y6.Text = "2"; }
+                if (plr1dir == 3) { btnX8Y6.Text = "3"; }
+                if (plr1dir == 4) { btnX8Y6.Text = "4"; }
+                if (plr1dir == 5) { btnX8Y6.Text = "5"; }
+                if (plr1dir == 6) { btnX8Y6.Text = "6"; }
+            }
+            if (plr2pos == 87) { btnX8Y7.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX8Y7.Text = "1"; }
+                if (plr1dir == 2) { btnX8Y7.Text = "2"; }
+                if (plr1dir == 3) { btnX8Y7.Text = "3"; }
+                if (plr1dir == 4) { btnX8Y7.Text = "4"; }
+                if (plr1dir == 5) { btnX8Y7.Text = "5"; }
+                if (plr1dir == 6) { btnX8Y7.Text = "6"; }
+            }
+            if (plr1pos == 88) { btnX8Y8.BackColor = Color.Blue;
+                if (plr1dir == 1) { btnX8Y8.Text = "1"; }
+                if (plr1dir == 2) { btnX8Y8.Text = "2"; }
+                if (plr1dir == 3) { btnX8Y8.Text = "3"; }
+                if (plr1dir == 4) { btnX8Y8.Text = "4"; }
+                if (plr1dir == 5) { btnX8Y8.Text = "5"; }
+                if (plr1dir == 6) { btnX8Y8.Text = "6"; }
+            }
 
 
-            //positie markeren rood
-            if (plr2pos == 00) { btnX0Y0.BackColor = Color.Red; }
-            if (plr2pos == 01) { btnX0Y1.BackColor = Color.Red; }
-            if (plr2pos == 03) { btnX0Y3.BackColor = Color.Red; }
-            if (plr2pos == 04) { btnX0Y4.BackColor = Color.Red; }
-            if (plr2pos == 10) { btnX1Y0.BackColor = Color.Red; }
-            if (plr2pos == 11) { btnX1Y1.BackColor = Color.Red; }
-            if (plr2pos == 12) { btnX1Y2.BackColor = Color.Red; }
-            if (plr2pos == 13) { btnX1Y3.BackColor = Color.Red; }
-            if (plr2pos == 14) { btnX1Y4.BackColor = Color.Red; }
-            if (plr2pos == 15) { btnX1Y5.BackColor = Color.Red; }
-            if (plr2pos == 20) { btnX2Y0.BackColor = Color.Red; }
-            if (plr2pos == 21) { btnX2Y1.BackColor = Color.Red; }
-            if (plr2pos == 22) { btnX2Y2.BackColor = Color.Red; }
-            if (plr2pos == 23) { btnX2Y3.BackColor = Color.Red; }
-            if (plr2pos == 24) { btnX2Y4.BackColor = Color.Red; }
-            if (plr2pos == 25) { btnX2Y5.BackColor = Color.Red; }
-            if (plr2pos == 26) { btnX2Y6.BackColor = Color.Red; }
-            if (plr2pos == 30) { btnX3Y0.BackColor = Color.Red; }
-            if (plr2pos == 31) { btnX3Y1.BackColor = Color.Red; }
-            if (plr2pos == 32) { btnX3Y2.BackColor = Color.Red; }
-            if (plr2pos == 33) { btnX3Y3.BackColor = Color.Red; }
-            if (plr2pos == 34) { btnX3Y4.BackColor = Color.Red; }
-            if (plr2pos == 35) { btnX3Y5.BackColor = Color.Red; }
-            if (plr2pos == 36) { btnX3Y6.BackColor = Color.Red; }
-            if (plr2pos == 37) { btnX3Y7.BackColor = Color.Red; }
-            if (plr2pos == 40) { btnX4Y0.BackColor = Color.Red; }
-            if (plr2pos == 41) { btnX4Y1.BackColor = Color.Red; }
-            if (plr2pos == 42) { btnX4Y2.BackColor = Color.Red; }
-            if (plr2pos == 43) { btnX4Y3.BackColor = Color.Red; }
-            if (plr2pos == 44) { btnX4Y4.BackColor = Color.Red; }
-            if (plr2pos == 45) { btnX4Y5.BackColor = Color.Red; }
-            if (plr2pos == 46) { btnX4Y6.BackColor = Color.Red; }
-            if (plr2pos == 47) { btnX4Y7.BackColor = Color.Red; }
-            if (plr2pos == 48) { btnX4Y8.BackColor = Color.Red; }
-            if (plr2pos == 51) { btnX5Y1.BackColor = Color.Red; }
-            if (plr2pos == 52) { btnX5Y2.BackColor = Color.Red; }
-            if (plr2pos == 53) { btnX5Y3.BackColor = Color.Red; }
-            if (plr2pos == 54) { btnX5Y4.BackColor = Color.Red; }
-            if (plr2pos == 55) { btnX5Y5.BackColor = Color.Red; }
-            if (plr2pos == 56) { btnX5Y6.BackColor = Color.Red; }
-            if (plr2pos == 57) { btnX5Y7.BackColor = Color.Red; }
-            if (plr2pos == 58) { btnX5Y8.BackColor = Color.Red; }
-            if (plr2pos == 62) { btnX6Y2.BackColor = Color.Red; }
-            if (plr2pos == 63) { btnX6Y3.BackColor = Color.Red; }
-            if (plr2pos == 64) { btnX6Y4.BackColor = Color.Red; }
-            if (plr2pos == 65) { btnX6Y5.BackColor = Color.Red; }
-            if (plr2pos == 66) { btnX6Y6.BackColor = Color.Red; }
-            if (plr2pos == 67) { btnX6Y7.BackColor = Color.Red; }
-            if (plr2pos == 68) { btnX6Y8.BackColor = Color.Red; }
-            if (plr2pos == 73) { btnX7Y3.BackColor = Color.Red; }
-            if (plr2pos == 74) { btnX7Y4.BackColor = Color.Red; }
-            if (plr2pos == 75) { btnX7Y5.BackColor = Color.Red; }
-            if (plr2pos == 76) { btnX7Y6.BackColor = Color.Red; }
-            if (plr2pos == 77) { btnX7Y7.BackColor = Color.Red; }
-            if (plr2pos == 78) { btnX7Y8.BackColor = Color.Red; }
-            if (plr2pos == 84) { btnX8Y4.BackColor = Color.Red; }
-            if (plr2pos == 85) { btnX8Y5.BackColor = Color.Red; }
-            if (plr2pos == 86) { btnX8Y6.BackColor = Color.Red; }
-            if (plr2pos == 87) { btnX8Y7.BackColor = Color.Red; }
-            if (plr2pos == 88) { btnX8Y8.BackColor = Color.Red; }
+            //positie markeren rood en richting noteren
+            if (plr2pos == 00) { btnX0Y0.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX8Y4.Text = "1"; }
+                if (plr2dir == 2) { btnX8Y4.Text = "2"; }
+                if (plr2dir == 3) { btnX8Y4.Text = "3"; }
+                if (plr2dir == 4) { btnX8Y4.Text = "4"; }
+                if (plr2dir == 5) { btnX8Y4.Text = "5"; }
+                if (plr2dir == 6) { btnX8Y4.Text = "6"; }
+            }
+            if (plr2pos == 01) { btnX0Y1.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX0Y1.Text = "1"; }
+                if (plr2dir == 2) { btnX0Y1.Text = "2"; }
+                if (plr2dir == 3) { btnX0Y1.Text = "3"; }
+                if (plr2dir == 4) { btnX0Y1.Text = "4"; }
+                if (plr2dir == 5) { btnX0Y1.Text = "5"; }
+                if (plr2dir == 6) { btnX0Y1.Text = "6"; }
+            }
+            if (plr1pos == 02){ btnX0Y2.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX0Y2.Text = "1"; }
+                if (plr2dir == 2) { btnX0Y2.Text = "2"; }
+                if (plr2dir == 3) { btnX0Y2.Text = "3"; }
+                if (plr2dir == 4) { btnX0Y2.Text = "4"; }
+                if (plr2dir == 5) { btnX0Y2.Text = "5"; }
+                if (plr2dir == 6) { btnX0Y2.Text = "6"; }
+            }
+            if (plr2pos == 03) { btnX0Y3.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX0Y3.Text = "1"; }
+                if (plr2dir == 2) { btnX0Y3.Text = "2"; }
+                if (plr2dir == 3) { btnX0Y3.Text = "3"; }
+                if (plr2dir == 4) { btnX0Y3.Text = "4"; }
+                if (plr2dir == 5) { btnX0Y3.Text = "5"; }
+                if (plr2dir == 6) { btnX0Y3.Text = "6"; }
+            }
+            if (plr2pos == 04) { btnX0Y4.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX0Y4.Text = "1"; }
+                if (plr2dir == 2) { btnX0Y4.Text = "2"; }
+                if (plr2dir == 3) { btnX0Y4.Text = "3"; }
+                if (plr2dir == 4) { btnX0Y4.Text = "4"; }
+                if (plr2dir == 5) { btnX0Y4.Text = "5"; }
+                if (plr2dir == 6) { btnX0Y4.Text = "6"; }
+            }
+            if (plr2pos == 10) { btnX1Y0.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX1Y0.Text = "1"; }
+                if (plr2dir == 2) { btnX1Y0.Text = "2"; }
+                if (plr2dir == 3) { btnX1Y0.Text = "3"; }
+                if (plr2dir == 4) { btnX1Y0.Text = "4"; }
+                if (plr2dir == 5) { btnX1Y0.Text = "5"; }
+                if (plr2dir == 6) { btnX1Y0.Text = "6"; }
+            }
+            if (plr2pos == 11) { btnX1Y1.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX1Y1.Text = "1"; }
+                if (plr2dir == 2) { btnX1Y1.Text = "2"; }
+                if (plr2dir == 3) { btnX1Y1.Text = "3"; }
+                if (plr2dir == 4) { btnX1Y1.Text = "4"; }
+                if (plr2dir == 5) { btnX1Y1.Text = "5"; }
+                if (plr2dir == 6) { btnX1Y1.Text = "6"; }
+            }
+            if (plr2pos == 12) { btnX1Y2.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX1Y2.Text = "1"; }
+                if (plr2dir == 2) { btnX1Y2.Text = "2"; }
+                if (plr2dir == 3) { btnX1Y2.Text = "3"; }
+                if (plr2dir == 4) { btnX1Y2.Text = "4"; }
+                if (plr2dir == 5) { btnX1Y2.Text = "5"; }
+                if (plr2dir == 6) { btnX1Y2.Text = "6"; }
+            }
+            if (plr2pos == 13) { btnX1Y3.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX1Y3.Text = "1"; }
+                if (plr2dir == 2) { btnX1Y3.Text = "2"; }
+                if (plr2dir == 3) { btnX1Y3.Text = "3"; }
+                if (plr2dir == 4) { btnX1Y3.Text = "4"; }
+                if (plr2dir == 5) { btnX1Y3.Text = "5"; }
+                if (plr2dir == 6) { btnX1Y3.Text = "6"; }
+            }
+            if (plr2pos == 14) { btnX1Y4.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX1Y4.Text = "1"; }
+                if (plr2dir == 2) { btnX1Y4.Text = "2"; }
+                if (plr2dir == 3) { btnX1Y4.Text = "3"; }
+                if (plr2dir == 4) { btnX1Y4.Text = "4"; }
+                if (plr2dir == 5) { btnX1Y4.Text = "5"; }
+                if (plr2dir == 6) { btnX1Y4.Text = "6"; }
+            }
+            if (plr2pos == 15) { btnX1Y5.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX1Y5.Text = "1"; }
+                if (plr2dir == 2) { btnX1Y5.Text = "2"; }
+                if (plr2dir == 3) { btnX1Y5.Text = "3"; }
+                if (plr2dir == 4) { btnX1Y5.Text = "4"; }
+                if (plr2dir == 5) { btnX1Y5.Text = "5"; }
+                if (plr2dir == 6) { btnX1Y5.Text = "6"; }
+            }
+            if (plr2pos == 20) { btnX2Y0.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX2Y0.Text = "1"; }
+                if (plr2dir == 2) { btnX2Y0.Text = "2"; }
+                if (plr2dir == 3) { btnX2Y0.Text = "3"; }
+                if (plr2dir == 4) { btnX2Y0.Text = "4"; }
+                if (plr2dir == 5) { btnX2Y0.Text = "5"; }
+                if (plr2dir == 6) { btnX2Y0.Text = "6"; }
+            }
+            if (plr2pos == 21) { btnX2Y1.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX2Y1.Text = "1"; }
+                if (plr2dir == 2) { btnX2Y1.Text = "2"; }
+                if (plr2dir == 3) { btnX2Y1.Text = "3"; }
+                if (plr2dir == 4) { btnX2Y1.Text = "4"; }
+                if (plr2dir == 5) { btnX2Y1.Text = "5"; }
+                if (plr2dir == 6) { btnX2Y1.Text = "6"; }
+            }
+            if (plr2pos == 22) { btnX2Y2.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX2Y2.Text = "1"; }
+                if (plr2dir == 2) { btnX2Y2.Text = "2"; }
+                if (plr2dir == 3) { btnX2Y2.Text = "3"; }
+                if (plr2dir == 4) { btnX2Y2.Text = "4"; }
+                if (plr2dir == 5) { btnX2Y2.Text = "5"; }
+                if (plr2dir == 6) { btnX2Y2.Text = "6"; }
+            }
+            if (plr2pos == 23) { btnX2Y3.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX2Y3.Text = "1"; }
+                if (plr2dir == 2) { btnX2Y3.Text = "2"; }
+                if (plr2dir == 3) { btnX2Y3.Text = "3"; }
+                if (plr2dir == 4) { btnX2Y3.Text = "4"; }
+                if (plr2dir == 5) { btnX2Y3.Text = "5"; }
+                if (plr2dir == 6) { btnX2Y3.Text = "6"; }
+            }
+            if (plr2pos == 24) { btnX2Y4.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX2Y4.Text = "1"; }
+                if (plr2dir == 2) { btnX2Y4.Text = "2"; }
+                if (plr2dir == 3) { btnX2Y4.Text = "3"; }
+                if (plr2dir == 4) { btnX2Y4.Text = "4"; }
+                if (plr2dir == 5) { btnX2Y4.Text = "5"; }
+                if (plr2dir == 6) { btnX2Y4.Text = "6"; }
+            }
+            if (plr2pos == 25) { btnX2Y5.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX2Y5.Text = "1"; }
+                if (plr2dir == 2) { btnX2Y5.Text = "2"; }
+                if (plr2dir == 3) { btnX2Y5.Text = "3"; }
+                if (plr2dir == 4) { btnX2Y5.Text = "4"; }
+                if (plr2dir == 5) { btnX2Y5.Text = "5"; }
+                if (plr2dir == 6) { btnX2Y5.Text = "6"; }
+            }
+            if (plr2pos == 26) { btnX2Y6.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX2Y6.Text = "1"; }
+                if (plr2dir == 2) { btnX2Y6.Text = "2"; }
+                if (plr2dir == 3) { btnX2Y6.Text = "3"; }
+                if (plr2dir == 4) { btnX2Y6.Text = "4"; }
+                if (plr2dir == 5) { btnX2Y6.Text = "5"; }
+                if (plr2dir == 6) { btnX2Y6.Text = "6"; }
+            }
+            if (plr2pos == 30) { btnX3Y0.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX3Y0.Text = "1"; }
+                if (plr2dir == 2) { btnX3Y0.Text = "2"; }
+                if (plr2dir == 3) { btnX3Y0.Text = "3"; }
+                if (plr2dir == 4) { btnX3Y0.Text = "4"; }
+                if (plr2dir == 5) { btnX3Y0.Text = "5"; }
+                if (plr2dir == 6) { btnX3Y0.Text = "6"; }
+            }
+            if (plr2pos == 31) { btnX3Y1.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX3Y1.Text = "1"; }
+                if (plr2dir == 2) { btnX3Y1.Text = "2"; }
+                if (plr2dir == 3) { btnX3Y1.Text = "3"; }
+                if (plr2dir == 4) { btnX3Y1.Text = "4"; }
+                if (plr2dir == 5) { btnX3Y1.Text = "5"; }
+                if (plr2dir == 6) { btnX3Y1.Text = "6"; }
+            }
+            if (plr2pos == 32) { btnX3Y2.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX3Y2.Text = "1"; }
+                if (plr2dir == 2) { btnX3Y2.Text = "2"; }
+                if (plr2dir == 3) { btnX3Y2.Text = "3"; }
+                if (plr2dir == 4) { btnX3Y2.Text = "4"; }
+                if (plr2dir == 5) { btnX3Y2.Text = "5"; }
+                if (plr2dir == 6) { btnX3Y2.Text = "6"; }
+            }
+            if (plr2pos == 33) { btnX3Y3.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX3Y3.Text = "1"; }
+                if (plr2dir == 2) { btnX3Y3.Text = "2"; }
+                if (plr2dir == 3) { btnX3Y3.Text = "3"; }
+                if (plr2dir == 4) { btnX3Y3.Text = "4"; }
+                if (plr2dir == 5) { btnX3Y3.Text = "5"; }
+                if (plr2dir == 6) { btnX3Y3.Text = "6"; }
+            }
+            if (plr2pos == 34) { btnX3Y4.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX3Y4.Text = "1"; }
+                if (plr2dir == 2) { btnX3Y4.Text = "2"; }
+                if (plr2dir == 3) { btnX3Y4.Text = "3"; }
+                if (plr2dir == 4) { btnX3Y4.Text = "4"; }
+                if (plr2dir == 5) { btnX3Y4.Text = "5"; }
+                if (plr2dir == 6) { btnX3Y4.Text = "6"; }
+            }
+            if (plr2pos == 35) { btnX3Y5.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX3Y5.Text = "1"; }
+                if (plr2dir == 2) { btnX3Y5.Text = "2"; }
+                if (plr2dir == 3) { btnX3Y5.Text = "3"; }
+                if (plr2dir == 4) { btnX3Y5.Text = "4"; }
+                if (plr2dir == 5) { btnX3Y5.Text = "5"; }
+                if (plr2dir == 6) { btnX3Y5.Text = "6"; }
+            }
+            if (plr2pos == 36) { btnX3Y6.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX3Y6.Text = "1"; }
+                if (plr2dir == 2) { btnX3Y6.Text = "2"; }
+                if (plr2dir == 3) { btnX3Y6.Text = "3"; }
+                if (plr2dir == 4) { btnX3Y6.Text = "4"; }
+                if (plr2dir == 5) { btnX3Y6.Text = "5"; }
+                if (plr2dir == 6) { btnX3Y6.Text = "6"; }
+            }
+            if (plr2pos == 37) { btnX3Y7.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX3Y7.Text = "1"; }
+                if (plr2dir == 2) { btnX3Y7.Text = "2"; }
+                if (plr2dir == 3) { btnX3Y7.Text = "3"; }
+                if (plr2dir == 4) { btnX3Y7.Text = "4"; }
+                if (plr2dir == 5) { btnX3Y7.Text = "5"; }
+                if (plr2dir == 6) { btnX3Y7.Text = "6"; }
+            }
+            if (plr2pos == 40) { btnX4Y0.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX4Y0.Text = "1"; }
+                if (plr2dir == 2) { btnX4Y0.Text = "2"; }
+                if (plr2dir == 3) { btnX4Y0.Text = "3"; }
+                if (plr2dir == 4) { btnX4Y0.Text = "4"; }
+                if (plr2dir == 5) { btnX4Y0.Text = "5"; }
+                if (plr2dir == 6) { btnX4Y0.Text = "6"; }
+            }
+            if (plr2pos == 41) { btnX4Y1.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX4Y1.Text = "1"; }
+                if (plr2dir == 2) { btnX4Y1.Text = "2"; }
+                if (plr2dir == 3) { btnX4Y1.Text = "3"; }
+                if (plr2dir == 4) { btnX4Y1.Text = "4"; }
+                if (plr2dir == 5) { btnX4Y1.Text = "5"; }
+                if (plr2dir == 6) { btnX4Y1.Text = "6"; }
+            }
+            if (plr2pos == 42) { btnX4Y2.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX4Y2.Text = "1"; }
+                if (plr2dir == 2) { btnX4Y2.Text = "2"; }
+                if (plr2dir == 3) { btnX4Y2.Text = "3"; }
+                if (plr2dir == 4) { btnX4Y2.Text = "4"; }
+                if (plr2dir == 5) { btnX4Y2.Text = "5"; }
+                if (plr2dir == 6) { btnX4Y2.Text = "6"; }
+            }
+            if (plr2pos == 43) { btnX4Y3.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX4Y3.Text = "1"; }
+                if (plr2dir == 2) { btnX4Y3.Text = "2"; }
+                if (plr2dir == 3) { btnX4Y3.Text = "3"; }
+                if (plr2dir == 4) { btnX4Y3.Text = "4"; }
+                if (plr2dir == 5) { btnX4Y3.Text = "5"; }
+                if (plr2dir == 6) { btnX4Y3.Text = "6"; }
+            }
+            if (plr2pos == 44) { btnX4Y4.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX4Y4.Text = "1"; }
+                if (plr2dir == 2) { btnX4Y4.Text = "2"; }
+                if (plr2dir == 3) { btnX4Y4.Text = "3"; }
+                if (plr2dir == 4) { btnX4Y4.Text = "4"; }
+                if (plr2dir == 5) { btnX4Y4.Text = "5"; }
+                if (plr2dir == 6) { btnX4Y4.Text = "6"; }
+            }
+            if (plr2pos == 45) { btnX4Y5.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX4Y5.Text = "1"; }
+                if (plr2dir == 2) { btnX4Y5.Text = "2"; }
+                if (plr2dir == 3) { btnX4Y5.Text = "3"; }
+                if (plr2dir == 4) { btnX4Y5.Text = "4"; }
+                if (plr2dir == 5) { btnX4Y5.Text = "5"; }
+                if (plr2dir == 6) { btnX4Y5.Text = "6"; }
+            }
+            if (plr2pos == 46) { btnX4Y6.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX4Y6.Text = "1"; }
+                if (plr2dir == 2) { btnX4Y6.Text = "2"; }
+                if (plr2dir == 3) { btnX4Y6.Text = "3"; }
+                if (plr2dir == 4) { btnX4Y6.Text = "4"; }
+                if (plr2dir == 5) { btnX4Y6.Text = "5"; }
+                if (plr2dir == 6) { btnX4Y6.Text = "6"; }
+            }
+            if (plr2pos == 47) { btnX4Y7.BackColor = Color.Red;
+                if (plr1dir == 1) { btnX4Y7.Text = "1"; }
+                if (plr2dir == 2) { btnX4Y7.Text = "2"; }
+                if (plr2dir == 3) { btnX4Y7.Text = "3"; }
+                if (plr2dir == 4) { btnX4Y7.Text = "4"; }
+                if (plr2dir == 5) { btnX4Y7.Text = "5"; }
+                if (plr2dir == 6) { btnX4Y7.Text = "6"; }
+            }
+            if (plr2pos == 48) { btnX4Y8.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX4Y8.Text = "1"; }
+                if (plr2dir == 2) { btnX4Y8.Text = "2"; }
+                if (plr2dir == 3) { btnX4Y8.Text = "3"; }
+                if (plr2dir == 4) { btnX4Y8.Text = "4"; }
+                if (plr2dir == 5) { btnX4Y8.Text = "5"; }
+                if (plr2dir == 6) { btnX4Y8.Text = "6"; }
+            }
+            if (plr2pos == 51) { btnX5Y1.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX5Y1.Text = "1"; }
+                if (plr2dir == 2) { btnX5Y1.Text = "2"; }
+                if (plr2dir == 3) { btnX5Y1.Text = "3"; }
+                if (plr2dir == 4) { btnX5Y1.Text = "4"; }
+                if (plr2dir == 5) { btnX5Y1.Text = "5"; }
+                if (plr2dir == 6) { btnX5Y1.Text = "6"; }
+            }
+            if (plr2pos == 52) { btnX5Y2.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX5Y2.Text = "1"; }
+                if (plr2dir == 2) { btnX5Y2.Text = "2"; }
+                if (plr2dir == 3) { btnX5Y2.Text = "3"; }
+                if (plr2dir == 4) { btnX5Y2.Text = "4"; }
+                if (plr2dir == 5) { btnX5Y2.Text = "5"; }
+                if (plr2dir == 6) { btnX5Y2.Text = "6"; }
+            }
+            if (plr2pos == 53) { btnX5Y3.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX5Y3.Text = "1"; }
+                if (plr2dir == 2) { btnX5Y3.Text = "2"; }
+                if (plr2dir == 3) { btnX5Y3.Text = "3"; }
+                if (plr2dir == 4) { btnX5Y3.Text = "4"; }
+                if (plr2dir == 5) { btnX5Y3.Text = "5"; }
+                if (plr2dir == 6) { btnX5Y3.Text = "6"; }
+            }
+            if (plr2pos == 54) { btnX5Y4.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX5Y4.Text = "1"; }
+                if (plr2dir == 2) { btnX5Y4.Text = "2"; }
+                if (plr2dir == 3) { btnX5Y4.Text = "3"; }
+                if (plr2dir == 4) { btnX5Y4.Text = "4"; }
+                if (plr2dir == 5) { btnX5Y4.Text = "5"; }
+                if (plr2dir == 6) { btnX5Y4.Text = "6"; }
+            }
+            if (plr2pos == 55) { btnX5Y5.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX5Y5.Text = "1"; }
+                if (plr2dir == 2) { btnX5Y5.Text = "2"; }
+                if (plr2dir == 3) { btnX5Y5.Text = "3"; }
+                if (plr2dir == 4) { btnX5Y5.Text = "4"; }
+                if (plr2dir == 5) { btnX5Y5.Text = "5"; }
+                if (plr2dir == 6) { btnX5Y5.Text = "6"; }
+            }
+            if (plr2pos == 56) { btnX5Y6.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX5Y6.Text = "1"; }
+                if (plr2dir == 2) { btnX5Y6.Text = "2"; }
+                if (plr2dir == 3) { btnX5Y6.Text = "3"; }
+                if (plr2dir == 4) { btnX5Y6.Text = "4"; }
+                if (plr2dir == 5) { btnX5Y6.Text = "5"; }
+                if (plr2dir == 6) { btnX5Y6.Text = "6"; }
+            }
+            if (plr2pos == 57) { btnX5Y7.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX5Y7.Text = "1"; }
+                if (plr2dir == 2) { btnX5Y7.Text = "2"; }
+                if (plr2dir == 3) { btnX5Y7.Text = "3"; }
+                if (plr2dir == 4) { btnX5Y7.Text = "4"; }
+                if (plr2dir == 5) { btnX5Y7.Text = "5"; }
+                if (plr2dir == 6) { btnX5Y7.Text = "6"; }
+            }
+            if (plr2pos == 58) { btnX5Y8.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX5Y8.Text = "1"; }
+                if (plr2dir == 2) { btnX5Y8.Text = "2"; }
+                if (plr2dir == 3) { btnX5Y8.Text = "3"; }
+                if (plr2dir == 4) { btnX5Y8.Text = "4"; }
+                if (plr2dir == 5) { btnX5Y8.Text = "5"; }
+                if (plr2dir == 6) { btnX5Y8.Text = "6"; }
+            }
+            if (plr2pos == 62) { btnX6Y2.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX6Y2.Text = "1"; }
+                if (plr2dir == 2) { btnX6Y2.Text = "2"; }
+                if (plr2dir == 3) { btnX6Y2.Text = "3"; }
+                if (plr2dir == 4) { btnX6Y2.Text = "4"; }
+                if (plr2dir == 5) { btnX6Y2.Text = "5"; }
+                if (plr2dir == 6) { btnX6Y2.Text = "6"; }
+            }
+            if (plr2pos == 63) { btnX6Y3.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX6Y3.Text = "1"; }
+                if (plr2dir == 2) { btnX6Y3.Text = "2"; }
+                if (plr2dir == 3) { btnX6Y3.Text = "3"; }
+                if (plr2dir == 4) { btnX6Y3.Text = "4"; }
+                if (plr2dir == 5) { btnX6Y3.Text = "5"; }
+                if (plr2dir == 6) { btnX6Y3.Text = "6"; }
+            }
+            if (plr2pos == 64) { btnX6Y4.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX6Y4.Text = "1"; }
+                if (plr2dir == 2) { btnX6Y4.Text = "2"; }
+                if (plr2dir == 3) { btnX6Y4.Text = "3"; }
+                if (plr2dir == 4) { btnX6Y4.Text = "4"; }
+                if (plr2dir == 5) { btnX6Y4.Text = "5"; }
+                if (plr2dir == 6) { btnX6Y4.Text = "6"; }
+            }
+            if (plr2pos == 65) { btnX6Y5.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX6Y5.Text = "1"; }
+                if (plr2dir == 2) { btnX6Y5.Text = "2"; }
+                if (plr2dir == 3) { btnX6Y5.Text = "3"; }
+                if (plr2dir == 4) { btnX6Y5.Text = "4"; }
+                if (plr2dir == 5) { btnX6Y5.Text = "5"; }
+                if (plr2dir == 6) { btnX6Y5.Text = "6"; }
+            }
+            if (plr2pos == 66) { btnX6Y6.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX6Y6.Text = "1"; }
+                if (plr2dir == 2) { btnX6Y6.Text = "2"; }
+                if (plr2dir == 3) { btnX6Y6.Text = "3"; }
+                if (plr2dir == 4) { btnX6Y6.Text = "4"; }
+                if (plr2dir == 5) { btnX6Y6.Text = "5"; }
+                if (plr2dir == 6) { btnX6Y6.Text = "6"; }
+            }
+            if (plr2pos == 67) { btnX6Y7.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX6Y7.Text = "1"; }
+                if (plr2dir == 2) { btnX6Y7.Text = "2"; }
+                if (plr2dir == 3) { btnX6Y7.Text = "3"; }
+                if (plr2dir == 4) { btnX6Y7.Text = "4"; }
+                if (plr2dir == 5) { btnX6Y7.Text = "5"; }
+                if (plr2dir == 6) { btnX6Y7.Text = "6"; }
+            }
+            if (plr2pos == 68) { btnX6Y8.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX6Y8.Text = "1"; }
+                if (plr2dir == 2) { btnX6Y8.Text = "2"; }
+                if (plr2dir == 3) { btnX6Y8.Text = "3"; }
+                if (plr2dir == 4) { btnX6Y8.Text = "4"; }
+                if (plr2dir == 5) { btnX6Y8.Text = "5"; }
+                if (plr2dir == 6) { btnX6Y8.Text = "6"; }
+            }
+            if (plr2pos == 73) { btnX7Y3.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX7Y3.Text = "1"; }
+                if (plr2dir == 2) { btnX7Y3.Text = "2"; }
+                if (plr2dir == 3) { btnX7Y3.Text = "3"; }
+                if (plr2dir == 4) { btnX7Y3.Text = "4"; }
+                if (plr2dir == 5) { btnX7Y3.Text = "5"; }
+                if (plr2dir == 6) { btnX7Y3.Text = "6"; }
+            }
+            if (plr2pos == 74) { btnX7Y4.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX7Y4.Text = "1"; }
+                if (plr2dir == 2) { btnX7Y4.Text = "2"; }
+                if (plr2dir == 3) { btnX7Y4.Text = "3"; }
+                if (plr2dir == 4) { btnX7Y4.Text = "4"; }
+                if (plr2dir == 5) { btnX7Y4.Text = "5"; }
+                if (plr2dir == 6) { btnX7Y4.Text = "6"; }
+            }
+            if (plr2pos == 75) { btnX7Y5.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX7Y5.Text = "1"; }
+                if (plr2dir == 2) { btnX7Y5.Text = "2"; }
+                if (plr2dir == 3) { btnX7Y5.Text = "3"; }
+                if (plr2dir == 4) { btnX7Y5.Text = "4"; }
+                if (plr2dir == 5) { btnX7Y5.Text = "5"; }
+                if (plr2dir == 6) { btnX7Y5.Text = "6"; }
+            }
+            if (plr2pos == 76) { btnX7Y6.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX7Y6.Text = "1"; }
+                if (plr2dir == 2) { btnX7Y6.Text = "2"; }
+                if (plr2dir == 3) { btnX7Y6.Text = "3"; }
+                if (plr2dir == 4) { btnX7Y6.Text = "4"; }
+                if (plr2dir == 5) { btnX7Y6.Text = "5"; }
+                if (plr2dir == 6) { btnX7Y6.Text = "6"; }
+            }
+            if (plr2pos == 77) { btnX7Y7.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX7Y7.Text = "1"; }
+                if (plr2dir == 2) { btnX7Y7.Text = "2"; }
+                if (plr2dir == 3) { btnX7Y7.Text = "3"; }
+                if (plr2dir == 4) { btnX7Y7.Text = "4"; }
+                if (plr2dir == 5) { btnX7Y7.Text = "5"; }
+                if (plr2dir == 6) { btnX7Y7.Text = "6"; }
+            }
+            if (plr2pos == 78) { btnX7Y8.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX7Y8.Text = "1"; }
+                if (plr2dir == 2) { btnX7Y8.Text = "2"; }
+                if (plr2dir == 3) { btnX7Y8.Text = "3"; }
+                if (plr2dir == 4) { btnX7Y8.Text = "4"; }
+                if (plr2dir == 5) { btnX7Y8.Text = "5"; }
+                if (plr2dir == 6) { btnX7Y8.Text = "6"; }
+            }
+            if (plr2pos == 84) { btnX8Y4.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX8Y4.Text = "1"; } 
+                if (plr2dir == 2) { btnX8Y4.Text = "2"; }
+                if (plr2dir == 3) { btnX8Y4.Text = "3"; }
+                if (plr2dir == 4) { btnX8Y4.Text = "4"; }
+                if (plr2dir == 5) { btnX8Y4.Text = "5"; }
+                if (plr2dir == 6) { btnX8Y4.Text = "6"; }
+            }
+            if (plr2pos == 85) { btnX8Y5.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX8Y5.Text = "1"; }
+                if (plr2dir == 2) { btnX8Y5.Text = "2"; }
+                if (plr2dir == 3) { btnX8Y5.Text = "3"; }
+                if (plr2dir == 4) { btnX8Y5.Text = "4"; }
+                if (plr2dir == 5) { btnX8Y5.Text = "5"; }
+                if (plr2dir == 6) { btnX8Y5.Text = "6"; }
+            }
+            if (plr2pos == 86) { btnX8Y6.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX8Y6.Text = "1"; }
+                if (plr2dir == 2) { btnX8Y6.Text = "2"; }
+                if (plr2dir == 3) { btnX8Y6.Text = "3"; }
+                if (plr2dir == 4) { btnX8Y6.Text = "4"; }
+                if (plr2dir == 5) { btnX8Y6.Text = "5"; }
+                if (plr2dir == 6) { btnX8Y6.Text = "6"; }
+            }
+            if (plr2pos == 87) { btnX8Y7.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX8Y7.Text = "1"; }
+                if (plr2dir == 2) { btnX8Y7.Text = "2"; }
+                if (plr2dir == 3) { btnX8Y7.Text = "3"; }
+                if (plr2dir == 4) { btnX8Y7.Text = "4"; }
+                if (plr2dir == 5) { btnX8Y7.Text = "5"; }
+                if (plr2dir == 6) { btnX8Y7.Text = "6"; }
+            }
+            if (plr2pos == 88) { btnX8Y8.BackColor = Color.Red;
+                if (plr2dir == 1) { btnX8Y8.Text = "1"; }
+                if (plr2dir == 2) { btnX8Y8.Text = "2"; }
+                if (plr2dir == 3) { btnX8Y8.Text = "3"; }
+                if (plr2dir == 4) { btnX8Y8.Text = "4"; }
+                if (plr2dir == 5) { btnX8Y8.Text = "5"; }
+                if (plr2dir == 6) { btnX8Y8.Text = "6"; }
+            }
         }
 
     }

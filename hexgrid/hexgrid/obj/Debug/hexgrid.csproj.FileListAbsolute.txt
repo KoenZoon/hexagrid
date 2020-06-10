@@ -1,0 +1,9 @@
+C:\Users\Koen Zoon\Documents\schooljaar 2\hardware\hexagrid\hexgrid\hexgrid\bin\Debug\hexgrid.exe.config
+C:\Users\Koen Zoon\Documents\schooljaar 2\hardware\hexagrid\hexgrid\hexgrid\bin\Debug\hexgrid.exe
+C:\Users\Koen Zoon\Documents\schooljaar 2\hardware\hexagrid\hexgrid\hexgrid\obj\Debug\hexgrid.csprojAssemblyReference.cache
+C:\Users\Koen Zoon\Documents\schooljaar 2\hardware\hexagrid\hexgrid\hexgrid\obj\Debug\hexgrid.Form1.resources
+C:\Users\Koen Zoon\Documents\schooljaar 2\hardware\hexagrid\hexgrid\hexgrid\obj\Debug\hexgrid.Properties.Resources.resources
+C:\Users\Koen Zoon\Documents\schooljaar 2\hardware\hexagrid\hexgrid\hexgrid\obj\Debug\hexgrid.csproj.GenerateResource.cache
+C:\Users\Koen Zoon\Documents\schooljaar 2\hardware\hexagrid\hexgrid\hexgrid\obj\Debug\hexgrid.csproj.CoreCompileInputs.cache
+C:\Users\Koen Zoon\Documents\schooljaar 2\hardware\hexagrid\hexgrid\hexgrid\obj\Debug\hexgrid.exe
+C:\Users\Koen Zoon\Documents\schooljaar 2\hardware\hexagrid\hexgrid\hexgrid\obj\Debug\hexgrid.pdb

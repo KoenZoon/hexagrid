@@ -1,0 +1,13 @@
+ik heb tijdens het maken van dit project moeite gehad consistent er aan te werken. mede omdat ik het alleen moest doen.
+ik heb inefficiente methodes moeten gebruiken om de resultaten te bereiken die ik wil. de functies die ontbreken zijn:
+
+- het bordt resetten
+- voorkomen dat spelers van het bord vallen
+- voorkomen dat spelers over elkaar tegels heen gaan
+- het verwijderen van de spelers pijl
+- afbeelding in plaats van nummer om richting aan te geven.
+
+
+mijn computer laat mij deze applicatie niet gebruiken omdat het wordt gezien als een schadelijk bestand.
+er zijn geen errors aan gegeven maar de code die ik heb gemaakt zou moeten werken. ik ben in mezelf teleurgesteld dat ik 
+het niet beter vandaag heb kunnen inleveren.
